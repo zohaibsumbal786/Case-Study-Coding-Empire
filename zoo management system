@@ -1,0 +1,202 @@
+a=1
+while a==1:
+    print("                       ************************************************************")
+    print("                       ************************************************************")
+    print("                       ** >>>>>>>>Welcome To Wild Time Zoo online Portal<<<<<<<< **")
+    print("                       ************************************************************")
+    print("                       ************************************************************")
+    print("                       **|| option 1 to register to purchase tickets           ||**")
+    print("                       **|| option 2 to check animal and birds in a zoo        ||**")
+    print("                       **|| option 3 to read facilitise in wild time zoo       ||**")
+    print("                       **|| option 4for read your reacord                      ||**")
+    print("                       **|| option 5 For feedback                              ||**")
+    print("                       **|| option 6 to read Reviews give by customers         ||**")
+    print("                       **|| Use admin only Enter PIN code to remove file       ||**")
+    print("                       **|| option 7 to quit                                   ||**")
+    print("                       ************************************************************")
+    print("                       ************************************************************")
+    operation = int(input("Choose Your Option: \n"))
+  
+    if operation == 1: 
+            class Customer:
+                def __init__(self, name, number, cnic, tickets, amount):
+                    self.name = name
+                    self.number = number
+                    self.cnic = cnic 
+                    self.tickets = tickets
+                    self.amount = amount
+
+                def display_data(self):
+                    print("                                                     ")
+                    print("_______________________________________________")
+                    print("|        Customer Saved Record                ")
+                    print("|Name of customer = "+self.name)
+                    print("|Phone Number of customer = "+self.number)
+                    print("|CNIC of customer = "+self.cnic)
+                    print("|Tickets of customer = "+self.tickets)
+                    print("|Amount of customer deposit1 = "+self.amount)  
+                    print("________________________________________________")      
+
+            name = input("Enter Your Name: ")
+            number = input("Enter Your Number: ")
+            cnic = input("Enter Your CNIC: ")
+            tickets = input("number of tickets purchased")
+            amount = input("amount deposit by customer")
+
+            f=open(name,"w")
+            f.write(" Name of customer:  " + name + ".\n")
+            f.write(" number: " + number + ".\n")
+            f.write(" CNIC NO# " + cnic + ".\n")
+            f.write(" Number of tickets: " + tickets + ".\n")
+            f.write(" amount deposit: " + amount + ".\n" )
+            f.close()
+            
+            cus1 = Customer(name, number, cnic, tickets, amount)
+            cus1.display_data()
+    
+    elif operation == 2:        
+        class animal:
+            def printname(self,a,b,c,d,e,f,s):
+                self.a=a
+                self.b=b
+                self.c=c
+                self.d=d
+                self.e=e
+                self.f=f
+                self.s=s
+                print("1)"+ self.a)
+                print("2)"+ self.b)
+                print("3)"+ self.c)
+                print("4)"+ self.d)
+                print("5)"+ self.e)
+                print("6)"+ self.f)
+                print("7)"+ self.s)
+        i="    (Animals)   "
+        l= "Six new Lions"
+        k= "Rex the Rhino"
+        j= "kai the kiwi"
+        n= "JoJo the Giraffe"     
+        m= "A new big gorilla"
+        t="____________________________________________________________"
+
+        class bird(animal):
+            def birds(self,a,b,c,d,e,f,s):
+                self.a=a
+                self.b=b
+                self.c=c
+                self.d=d
+                self.e=e
+                self.f=f
+                self.s=s
+                print("1)"+ self.a)
+                print("2)"+ self.b)
+                print("4)"+ self.c)
+                print("3)"+ self.d)
+                print("5)"+ self.e)
+                print("6)"+ self.f)
+                print("7)"+ self.s)
+        u="      (Birds)"
+        z= "Two pair of eagles"
+        x= "Beautifull Parrots "
+        y= "One pair of Golden pheasant "
+        v= "large number of peacocks"     
+        g= "Flamingo " 
+        r= "American Goldfinch"  
+        obj=bird()
+        obj.printname(i,l,k,j,n,m,t)
+        obj.birds(u,z,x,y,v,g,r)
+    
+    elif operation ==3:
+        class facilitse:      
+                print("* A new Resturant is available ")
+                print("* A beautifull nightspot ")
+                print("* A evening bar for party ")
+                print("* Large number of animals ")
+                print("* Educational center: ")
+                print("                    It gives us a full guided tour of a zoo")
+                print("* Barbeque area around the ground")
+                print("* A fully shadded area to sit during day time")
+                
+            
+    elif operation==4:
+        class read:
+            try:
+                a=input("enter coustomer file name to read")
+                f=open(a,"r")
+                print(f.read())
+            except:
+                print("file is not available")
+            else:
+                f.close()
+                print("thanks you")
+                
+    elif operation ==9786:
+            import os
+            b=input("file name")
+            if os.path.exists(b):
+                os.remove(b)
+            else:
+                print("this file is already removed")
+
+
+    elif operation == 5:
+        class Reviews:
+            def __init__(self,name, location, environment, security, facilities, cleanliness, management, behaviour):
+                self.name=name
+                self.location = location
+                self.environment = environment
+                self.security = security
+                self.facilities = facilities
+                self.cleanliness = cleanliness
+                self.management = management
+                self.behaviour = behaviour
+
+            def display_data(self):
+                print("Name of customer:",self.name)
+                print("Location: ", self.location)
+                print("Environment: ", self.environment)
+                print("Security: ", self.security)
+                print("Facilities: ", self.facilities)
+                print("Cleanliness: ", self.cleanliness)
+                print("Management: ", self.management)
+                print("Behaviour: ", self.behaviour)
+
+        name=input("enter your name \n")
+        location = input("Is location is good or not? ")
+        environment = input("How do you feel about the environment of Wild Time ZOO? ")
+        security = input("Are you feel secure or not in WIld time ZOO? ")
+        facilities = input("Does the hostel provides all types of facilities or not? ")
+        cleanliness = input("The ZOO was clean OR not.? ")
+        management= input("Is management are good or not? ")
+        behaviour = input("Do you like the behaviour of ZOO faculty or not? ")
+        
+        f=open("Reviwes1.txt","a")
+        f.write("Name of client: \n"+ name +".\n")
+        f.write("location:\n "+ location + " .\n")
+        f.write("Environment:\n " + environment + " .\n")
+        f.write("security:\n " + security + " .\n")
+        f.write("facilities:\n " + facilities + " .\n")
+        f.write("cleanliness: \n" + cleanliness + " .\n")
+        f.write("management:\n " + management + " .\n")
+        f.write("behaviour:\n " + behaviour + " .\n")
+        f.close()
+        view = Reviews(name,location, environment, security, facilities, cleanliness, management, behaviour)
+        view.display_data()
+        
+    elif operation ==6:
+        f=open("Reviwes1.txt","r")
+        print(f.read())
+    
+    elif operation ==7:
+        print("Thanks for vist our site")
+        break
+
+    else:
+        print("Invalid input. Please choose other option") 
+      
+    c=input("enter 0 to got to main manue \n")
+    if c==1:
+        break
+    else:
+        continue
+    
